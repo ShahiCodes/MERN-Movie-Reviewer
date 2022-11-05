@@ -25,12 +25,19 @@ Frontend Dependencies: <code></code>
 	<li><code>axios</code>: Axios for the get/post/put/delete requests.</li>
 </ul>
 
+Integrating Python with Mern Stack <a href="https://dilmikottachchi.medium.com/integrating-python-with-the-mern-stack-59c060957710">Link</a>
+<ul>
+	<li>npm i child_process</li>
+</ul>
 
 HTPP REQUESTS for backend
 GET
 http://localhost:5000/api/v1/movies
 http://localhost:5000/api/v1/movies/id/635ca8fe5fb40f69256b32ed
 http://localhost:5000/api/v1/movies?genre=action
+
+GET
+http://localhost:5000/api/v1/movies/review
 
 POST
 http://localhost:5000/api/v1/movies/review

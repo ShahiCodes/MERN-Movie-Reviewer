@@ -45,6 +45,16 @@ const Movie = props => {
       });
   };
 
+  function editOrAddReview(movie) {
+    /** If there is review present can only EDIT, cannot ADD */
+    for(let i=0; i<movie.reviews.length; i++) {
+      if (props.user && props.user.id === movie.reviews[i].user_id) {
+        return "EDIT";
+      }
+    }
+    return "ADD";
+  }
+
   return (
     <div>
       {movie ? (
@@ -55,9 +65,14 @@ const Movie = props => {
             <strong>Release Year: </strong>{movie.release_year}<br/>
             <strong>Overview: </strong>{movie.overview + "..."}
           </p>
-          <Link to={"/movies/" + props.match.params.id + "/review"} className="btn btn-primary">
-            Add Review
-          </Link>
+
+          { 
+            /** If there is review present can only EDIT, cannot ADD */
+            editOrAddReview(movie) === "ADD" &&
+              <Link to={"/movies/" + props.match.params.id + "/review"} className="btn btn-primary">
+                Add Review
+              </Link>
+          }
           
           <h4> Reviews </h4>
           <div className="row">
@@ -71,7 +86,7 @@ const Movie = props => {
                          {review.text}<br/>
                          <strong>Rating: </strong>{review.rating}<br/>
                          <strong>User: </strong>{review.name}<br/>
-                         <strong>Date: </strong>{review.date}
+                         <strong>Date: </strong>{review.date.substring(0,10)}
                        </p>
                        {props.user && props.user.id === review.user_id &&
                           <div className="row">

@@ -14,6 +14,7 @@ router.route("/genres").get(MoviesController.apiGetMovieGenres);
 
 router
   .route("/review")
+  .get(ReviewsController.apiGetAllReviews)
   .post(ReviewsController.apiPostReview)
   .put(ReviewsController.apiUpdateReview)
   .delete(ReviewsController.apiDeleteReview)

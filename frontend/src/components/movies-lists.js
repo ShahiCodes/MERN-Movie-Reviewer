@@ -87,63 +87,64 @@ const MoviesList = props => {
 
   return (
     <div>
-			<div className="row pb-1">
-				<div className="input-group col-lg-4">
-					<input
-						type="text"
-						className="form-control"
-						placeholder="Search by name"
-						value={searchName}
-						onChange={onChangeSearchName}
-					/>
-					<div className="input-group-append">
-						<button
-							className="btn btn-outline-secondary"
-							type="button"
-							onClick={findByName}
-						>
-						Search
-						</button>
-					</div>
-				</div>
-				<div className="input-group col-lg-4">
-					<input
-						type="text"
-						className="form-control"
-						placeholder="Search by Release Year"
-						value={searchReleaseYear}
-						onChange={onChangeSearchReleaseYear}
-					/>
-					<div className="input-group-append">
-						<button
+		<div className="row pb-1">
+			<div className="input-group col-lg-4">
+				<input
+					type="text"
+					className="form-control"
+					placeholder="Search by name"
+					value={searchName}
+					onChange={onChangeSearchName}
+				/>
+				<div className="input-group-append">
+					<button
 						className="btn btn-outline-secondary"
 						type="button"
-						onClick={findByReleaseYear}
-						>
-						Search
-						</button>
-					</div>
-				</div>
-				<div className="input-group col-lg-4">
-					<select onChange={onChangeSearchGenre}>
-						{genres.map((genre, index) => {
-						return (
-								<option key={index} value={genre}> {genre.substr(0, 20)} </option>
-						)
-						})}
-					</select>
-					<div className="input-group-append">
-						<button
-							className="btn btn-outline-secondary"
-							type="button"
-							onClick={findByGenre}
-						>
-							Search
-						</button>
-					</div>
+						onClick={findByName}
+					>
+					Search
+					</button>
 				</div>
 			</div>
+			<div className="input-group col-lg-4">
+				<input
+					type="text"
+					className="form-control"
+					placeholder="Search by Release Year"
+					value={searchReleaseYear}
+					onChange={onChangeSearchReleaseYear}
+				/>
+				<div className="input-group-append">
+					<button
+					className="btn btn-outline-secondary"
+					type="button"
+					onClick={findByReleaseYear}
+					>
+					Search
+					</button>
+				</div>
+			</div>
+			<div className="input-group col-lg-4">
+				<select onChange={onChangeSearchGenre}>
+					{genres.map((genre, index) => {
+					return (
+							<option key={index} value={genre}> {genre.substr(0, 20)} </option>
+					)
+					})}
+				</select>
+				<div className="input-group-append">
+					<button
+						className="btn btn-outline-secondary"
+						type="button"
+						onClick={findByGenre}
+					>
+						Search
+					</button>
+				</div>
+			</div>
+		</div>
 
+		{/* Movie list displays */}
 			<div className="row">
 				{movies.map((movie, index) => {
 					return (

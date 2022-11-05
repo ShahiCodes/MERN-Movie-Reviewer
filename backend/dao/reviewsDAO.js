@@ -61,4 +61,43 @@ export default class ReviewsDAO {
     }
   }
 
+  static async getAllReviews({
+    page = 0,
+    reviewsPerPage = 20,
+  } = {}) {
+
+    /**Find all reviews */
+    let cursor
+    try {
+      cursor = await reviews
+        .find()
+        // .toArray(
+        //   function(err, result) {
+        //     if (err) {
+        //       throw err
+        //     }
+        //     console.log(result)
+        // })
+    } catch (e) {
+      console.error(`Unable to get reviews: ${e}`)
+      return {reviewsList: [], totalNumReviews: 0}
+    }
+
+    /**Limit reviews per page, skip to get to actual page number */
+		const displayCursor = cursor.limit(reviewsPerPage).skip(reviewsPerPage * page)
+
+    try {
+      /**Set review list to an array and then return the array */
+      const reviewsList = await displayCursor.toArray()
+      const totalNumReviews = await reviews.countDocuments()
+
+      return { reviewsList, totalNumReviews }
+    } catch (e) {
+        console.error(
+          `Unable to convert cursor to array or problem counting documents, ${e}`,
+        )
+        return { reviewsList: [], totalNumReviews: 0 }
+    }
+  }
+
 }
