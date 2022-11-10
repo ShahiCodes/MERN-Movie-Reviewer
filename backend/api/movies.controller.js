@@ -5,7 +5,7 @@ export default class MoviesController {
   static async apiGetMovies(req, res, next) {
     /**Passing in query strings to this api*/
     /**If query passed in, convert query to int, else default */
-    const moviesPerPage = req.query.moviesPerPage ? parseInt(req.query.moviesPerPage, 10) : 20
+    const moviesPerPage = req.query.moviesPerPage ? parseInt(req.query.moviesPerPage, 10) : 30
     const page = req.query.page ? parseInt(req.query.page, 10) : 0
 
     /**If query provides filters set filters */
@@ -32,6 +32,7 @@ export default class MoviesController {
       entries_per_page: moviesPerPage,
       total_results: totalNumMovies,
     }
+    
     res.json(response)
   }
   

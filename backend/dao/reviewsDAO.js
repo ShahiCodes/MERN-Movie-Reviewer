@@ -23,7 +23,8 @@ export default class ReviewsDAO {
           date: date,
           rating: rating,
           text: review,
-          movie_id: ObjectId(movieId), }
+          movie_id: ObjectId(movieId), 
+      }
 
       return await reviews.insertOne(reviewDoc)
     } catch (e) {
@@ -63,7 +64,7 @@ export default class ReviewsDAO {
 
   static async getAllReviews({
     page = 0,
-    reviewsPerPage = 20,
+    reviewsPerPage = 30,
   } = {}) {
 
     /**Find all reviews */
@@ -71,13 +72,6 @@ export default class ReviewsDAO {
     try {
       cursor = await reviews
         .find()
-        // .toArray(
-        //   function(err, result) {
-        //     if (err) {
-        //       throw err
-        //     }
-        //     console.log(result)
-        // })
     } catch (e) {
       console.error(`Unable to get reviews: ${e}`)
       return {reviewsList: [], totalNumReviews: 0}

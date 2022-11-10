@@ -4,8 +4,9 @@ import ReviewsController from "./reviews.controller.js";
 
 const router = express.Router();
 
-router.route("/").get(MoviesController.apiGetMovies);
-// router.route("/").get((req,res) => res.send("hello world"));
+router
+  .route("/")
+  .get(MoviesController.apiGetMovies);
 
 /**Return movie by id */
 router.route("/id/:id").get(MoviesController.apiGetMovieById);

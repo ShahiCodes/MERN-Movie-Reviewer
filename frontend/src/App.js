@@ -6,6 +6,7 @@ import AddReview from "./components/add-review";
 import Login from "./components/login";
 import Movie from "./components/movie";
 import MoviesList from "./components/movies-lists";
+import Reviews from "./components/reviews";
 
 function App() {
 
@@ -41,7 +42,13 @@ function App() {
               Login
             </Link>
             )}
-
+          </li>
+          <li>
+            { user &&
+              <Link to={"/movies/reviews"} className="nav-link">
+                Reviews
+              </Link>
+            }
           </li>
         </div>
       </nav>
@@ -49,6 +56,7 @@ function App() {
       <div className="container mt-3">
         <Switch>
           <Route exact path={["/", "/movies"]} component={MoviesList} />
+          <Route exact path={"/movies/reviews"} component={Reviews}/>
           <Route 
             path="/movies/:id/review"
             render={(props) => (

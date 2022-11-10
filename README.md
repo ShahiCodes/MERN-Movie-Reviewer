@@ -1,5 +1,5 @@
 # MERN-Movie-Recommender
-Full stack web app using the MERN(MongoDB, Express, React, and Node.js) stack and autoencoders to the task of making movie recommendations.
+Full stack web app using the MERN(MongoDB, Express, React, and Node.js) stack and autoencoders with Pandas, NumPy and Tensorflow(Keras) for the task of making movie recommendations. CRUD(Create, Read, Update and Delete) movie reviews/ratings to be recommended movies. 
 
 MERN:
 <ul>

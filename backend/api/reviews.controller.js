@@ -74,7 +74,7 @@ export default class ReviewsController {
   }
 
   static async apiGetAllReviews(req, res, next) {
-    const reviewsPerPage = req.query.reviewsPerPage ? parseInt(req.query.reviewsPerPage, 10) : 20
+    const reviewsPerPage = req.query.reviewsPerPage ? parseInt(req.query.reviewsPerPage, 10) : 30
     const page = req.query.page ? parseInt(req.query.page, 10) : 0
     
     const { reviewsList, totalNumReviews } = await ReviewsDAO.getAllReviews({
