@@ -3,6 +3,7 @@ import mongodb from "mongodb";
 import dotenv from "dotenv";
 import MoviesDAO from "./dao/moviesDAO.js";
 import ReviewsDAO from "./dao/reviewsDAO.js";
+import RatingsDAO from "./dao/ratingsDAO.js"
 
 /**Configure env to load in environment variables*/
 dotenv.config();
@@ -25,6 +26,7 @@ MongoClient.connect(
     .then(async client => {
         await MoviesDAO.injectDB(client)
         await ReviewsDAO.injectDB(client)
+        await RatingsDAO.injectDB(client)
         app.listen(port, () => {
             console.log(`listening on port ${port}`);            
         })

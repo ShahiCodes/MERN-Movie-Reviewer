@@ -1,6 +1,8 @@
 import express from "express";
 import MoviesController from "./movies.controller.js";
 import ReviewsController from "./reviews.controller.js";
+import movieRecsController from "./movierecs.controller.js";
+import RatingsController from "./ratings.controller.js";
 
 const router = express.Router();
 
@@ -19,5 +21,13 @@ router
   .post(ReviewsController.apiPostReview)
   .put(ReviewsController.apiUpdateReview)
   .delete(ReviewsController.apiDeleteReview)
+
+router
+  .route("/movierecs")
+  .get(movieRecsController.apiGetMovieRecs)
+
+router
+  .route("/ratings")
+  .get(RatingsController.apiGetAllRatings)
 
 export default router;
