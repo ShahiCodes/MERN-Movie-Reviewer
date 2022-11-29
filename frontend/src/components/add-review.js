@@ -28,12 +28,14 @@ const AddReview = props => {
   };
 
   const saveReview = () => {
+    // console.log(props)
     var data = {
 			text: review,
 			rating: rating,
 			name: props.user.name,
 			user_id: props.user.id,
-			movie_id: props.match.params.id
+			movie_id: props.match.params.id,
+      movie_name: props.location.state.movie_name
     };
 
     if (editing) {
@@ -56,7 +58,6 @@ const AddReview = props => {
           console.log(e);
         });
     }
-
   };
 
   return (
@@ -66,12 +67,21 @@ const AddReview = props => {
         {submitted ? (
           <div>
             <h4>You submitted successfully!</h4>
-            <Link to={"/movies/" + props.match.params.id} className="btn btn-success">
-              Back to Movies
+            <Link to={"/movies/"} className="btn btn-success mx-1">
+              Back to Home
+            </Link>
+            <Link to={"/movies/" + props.match.params.id} className="btn btn-success mx-1">
+              Back to {props.location.state.movie_name}
+            </Link>
+            <Link to={"/movies/reviews"} className="btn btn-success">
+              Back to Reviews
             </Link>
           </div>
         ) : (
           <div>
+            <div className="form-group">
+              <h4>Movie Review for {props.location.state.movie_name}</h4>
+            </div>
             <div className="form-group">
               <label htmlFor="description">{ editing ? "Edit" : "Create" } Review</label>
               <input

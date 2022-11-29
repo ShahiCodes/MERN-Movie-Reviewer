@@ -33,18 +33,21 @@ Integrating Python with Mern Stack <a href="https://dilmikottachchi.medium.com/i
 HTPP REQUESTS for backend
 GET
 http://localhost:5000/api/v1/movies
-http://localhost:5000/api/v1/movies/id/635ca8fe5fb40f69256b32ed
+http://localhost:5000/api/v1/movies/id/636dcf5129668a428f83c73e
 http://localhost:5000/api/v1/movies?genre=action
 
 GET
 http://localhost:5000/api/v1/movies/review
+http://localhost:5000/api/v1/movies/ratings
+http://localhost:5000/api/v1/movies/movierecs
 
 POST
 http://localhost:5000/api/v1/movies/review
 {
-	"movie_id": "635ca8fe5fb40f69256b32ed",
+	"movie_id": "636dcf5129668a428f83c73e",
+	"movie_name": "Balto",
 	"rating": "4",
-	"text": "Test",
+	"text": "Newest Test",
 	"user_id": "admin-tim",
 	"name": "admin-tim"
 }

@@ -7,6 +7,7 @@ import Login from "./components/login";
 import Movie from "./components/movie";
 import MoviesList from "./components/movies-lists";
 import Reviews from "./components/reviews";
+import MovieRecs from "./components/movie-recs";
 
 function App() {
 
@@ -34,7 +35,7 @@ function App() {
           </li>
           <li className="nav-item" >
             { user ? (
-              <a onClick={logout} className="nav-link" style={{cursor:'pointer'}}>
+              <a href="/#" onClick={logout} className="nav-link" style={{cursor:'pointer'}}>
                 Logout {user.name}
               </a>
             ) : (            
@@ -50,6 +51,13 @@ function App() {
               </Link>
             }
           </li>
+          <li>
+            { user &&
+              <Link to={"/movies/movierecs"} className="nav-link">
+                Movie Recs
+              </Link>
+            }
+          </li>
         </div>
       </nav>
 
@@ -57,6 +65,7 @@ function App() {
         <Switch>
           <Route exact path={["/", "/movies"]} component={MoviesList} />
           <Route exact path={"/movies/reviews"} component={Reviews}/>
+          <Route exact path={"/movies/movierecs"} component={MovieRecs}/>
           <Route 
             path="/movies/:id/review"
             render={(props) => (

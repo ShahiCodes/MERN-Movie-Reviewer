@@ -69,7 +69,13 @@ const Movie = props => {
           { 
             /** If there is review present can only EDIT, cannot ADD */
             editOrAddReview(movie) === "ADD" &&
-              <Link to={"/movies/" + props.match.params.id + "/review"} className="btn btn-primary">
+              <Link 
+                to={{
+                  pathname: "/movies/" + props.match.params.id + "/review",
+                  state:{
+                    movie_name: movie.name
+                  }
+                }} className="btn btn-primary">
                 Add Review
               </Link>
           }
@@ -91,11 +97,13 @@ const Movie = props => {
                        {props.user && props.user.id === review.user_id &&
                           <div className="row">
                             <a onClick={() => deleteReview(review._id, index)} className="btn btn-primary col-lg-5 mx-1 mb-1">Delete</a>
-                            <Link to={{
-                              pathname: "/movies/" + props.match.params.id + "/review",
-                              state: {
-                                currentReview: review,
-                              }
+                            <Link 
+                              to={{
+                                pathname: "/movies/" + props.match.params.id + "/review",
+                                state: {
+                                  currentReview: review,
+                                  movie_name: movie.name
+                                }
                             }} className="btn btn-primary col-lg-5 mx-1 mb-1">Edit</Link>
                           </div>                   
                        }

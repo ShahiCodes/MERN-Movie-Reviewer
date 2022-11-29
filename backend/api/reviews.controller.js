@@ -5,6 +5,7 @@ export default class ReviewsController {
   static async apiPostReview(req, res, next) {
     try {
       const movieId = req.body.movie_id
+      const movie_name = req.body.movie_name
       const rating = req.body.rating
       const review = req.body.text
       const userInfo = {
@@ -15,6 +16,7 @@ export default class ReviewsController {
 
       const ReviewResponse = await ReviewsDAO.addReview(
         movieId,
+        movie_name,
         userInfo,
         rating,
         review,

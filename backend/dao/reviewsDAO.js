@@ -16,14 +16,15 @@ export default class ReviewsDAO {
     }
   }
 
-  static async addReview(movieId, user, rating, review, date) {
+  static async addReview(movieId, movie_name, user, rating, review, date) {
     try {
       const reviewDoc = { name: user.name,
           user_id: user._id,
           date: date,
           rating: rating,
           text: review,
-          movie_id: ObjectId(movieId), 
+          movie_id: ObjectId(movieId),
+          movie_name: movie_name
       }
 
       return await reviews.insertOne(reviewDoc)
