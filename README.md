@@ -1,5 +1,5 @@
 # MERN-Movie-Recommender
-Full stack web app using the MERN(MongoDB, Express, React, and Node.js) stack and autoencoders with Pandas, NumPy and Tensorflow(Keras) for the task of making movie recommendations. CRUD(Create, Read, Update and Delete) movie reviews/ratings to be recommended movies. 
+Full stack web app using the MERN stack (MongoDB, Express, React, and Node.js) and Django REST Web API (Pandas, NumPy and Tensorflow Keras) for making movie recommendations. CRUD (Create, Read, Update and Delete) movie reviews and ratings to be recommended movies.
 
 MERN:
 <ul>
@@ -11,61 +11,43 @@ MERN:
 
 Backend Dependencies:
 <ul>
-	<li><code>express</code>: </li>
+	<li><code>express</code></li>
 	<li><code>cors</code>: Cross-origin resource sharing, allows ajax request to skip the same origin policy and access resources from remote hosts. The cors package provides an express middleware than can enable cors with different options. Basically going it make it so we can make the right connections on our network that we need to make.</li>
 	<li><code>mongodb</code>: </li>
 	<li><code>dotenv</code>: Loads environmental variables from a dot emv file in the process. Environmental variables can be stored in a file.</li>
 	<li><code>nodemon</code>: Nodemon helps develop node.js based applications by automatically restarting the node application.</li>
 </ul>
 
-Frontend Dependencies: <code></code>
+Frontend Dependencies:
 <ul>
 	<li><code>bootstrap</code></li>
 	<li><code>react-router-dom@5</code>: To route different urls to different pages on our site.</li>
 	<li><code>axios</code>: Axios for the get/post/put/delete requests.</li>
 </ul>
 
-Integrating Python with Mern Stack <a href="https://dilmikottachchi.medium.com/integrating-python-with-the-mern-stack-59c060957710">Link</a>
+Django Dependencies
 <ul>
-	<li>npm i child_process</li>
+	<li><code>django</code>: high-level Python web framework.</li>
+	<li><code>djangorestframework</code>:  powerful and flexible toolkit for building Web APIs.</li>
 </ul>
 
-HTPP REQUESTS for backend
-GET
-http://localhost:5000/api/v1/movies
-http://localhost:5000/api/v1/movies/id/636dcf5129668a428f83c73e
-http://localhost:5000/api/v1/movies?genre=action
+<h3>Search for movies using the Search by Name, Search by Release Year or Genre queries. </h3>
+<img src="screenshots/1-HomePage.png" alt="Home Page" width="200%" height="200%">
 
-GET
-http://localhost:5000/api/v1/movies/review
-http://localhost:5000/api/v1/movies/ratings
-http://localhost:5000/api/v1/movies/movierecs
+<h3>After logging in, the Home page is updated with more tab option.</h3>
+<img src="screenshots/2-HomePage_LoggedIn.png" alt="Home Page Logged in" width="200%" height="200%">
 
-POST
-http://localhost:5000/api/v1/movies/review
-{
-	"movie_id": "636dcf5129668a428f83c73e",
-	"movie_name": "Balto",
-	"rating": "4",
-	"text": "Newest Test",
-	"user_id": "admin-tim",
-	"name": "admin-tim"
-}
+<h3>Clicking "View Reviews" on a movie gives you the option to add a review/rating for the movie.</h3>
+<img src="screenshots/3-MovieNoReviews.png" alt="Movie Page" width="200%" height="200%">
 
-PUT
-http://localhost:5000/api/v1/movies/review
-{
-	"review_id": "635d9f34b201f608e415c339",
-	"rating": "3",
-	"text": "PUT Test",
-	"user_id": "admin-tim",
-	"name": "admin-tim"
-}
+<h3>Add your review.</h3>
+<img src="screenshots/4-AddReview.png" alt="Add Review Page" width="200%" height="200%">
 
-DELETE
-http://localhost:5000/api/v1/movies/review?id=635d9f34b201f608e415c339
-{
-	"user_id": "admin-tim",
-	"name": "admin-tim"
-}
+<h3>Movie now displays your review.</h3>
+<img src="screenshots/5-MovieWithReview.png" alt="Movie Page with Review" width="200%" height="200%">
 
+<h3>Review tab displays all your reviews which you can edit.</h3>
+<img src="screenshots/6-Reviews.png" alt="Reviews Page" width="200%" height="200%">
+
+<h3>Movie Recs tab receives the recommended movies from the Django REST Web API and displays them here.</h3>
+<img src="screenshots/7-MovieRecs.png" alt="Movie Recs Page" width="200%" height="200%">
