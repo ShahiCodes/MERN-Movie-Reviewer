@@ -25,6 +25,7 @@ const Reviews = props => {
 
   return (
     <div>
+			<h1>Reviews</h1>
 			<div className="row">
 				{reviews.map((review, index) => {
 					return (
