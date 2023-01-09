@@ -1,5 +1,5 @@
-# MERN-Movie-Recommender
-Full stack web app using the MERN stack (MongoDB, Express, React, and Node.js) and Django REST Web API (Pandas, NumPy and Tensorflow Keras) for making movie recommendations. CRUD (Create, Read, Update and Delete) movie reviews and ratings to be recommended movies.
+# MERN-Movie-Reviewer
+Full stack web app using the MERN stack (MongoDB, Express, React, and Node.js) to CRUD (Create, Read, Update and Delete) movie reviews and ratings.
 
 MERN:
 <ul>
@@ -25,12 +25,6 @@ Frontend Dependencies:
 	<li><code>axios</code>: Axios for the get/post/put/delete requests.</li>
 </ul>
 
-Django Dependencies
-<ul>
-	<li><code>django</code>: high-level Python web framework.</li>
-	<li><code>djangorestframework</code>:  powerful and flexible toolkit for building Web APIs.</li>
-</ul>
-
 <h3>Search for movies using the Search by Name, Search by Release Year or Genre queries. </h3>
 <img src="screenshots/1-HomePage.png" alt="Home Page" width="200%" height="200%">
 
@@ -48,6 +42,3 @@ Django Dependencies
 
 <h3>Review tab displays all your reviews which you can edit.</h3>
 <img src="screenshots/6-Reviews.png" alt="Reviews Page" width="200%" height="200%">
-
-<h3>Movie Recs tab receives the recommended movies from the Django REST Web API and displays them here.</h3>
-<img src="screenshots/7-MovieRecs.png" alt="Movie Recs Page" width="200%" height="200%">
