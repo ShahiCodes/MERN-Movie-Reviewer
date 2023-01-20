@@ -25,6 +25,14 @@ Frontend Dependencies:
 	<li><code>axios</code>: Axios for the get/post/put/delete requests.</li>
 </ul>
 
+To use:
+<ul>
+	<li>Open 2 command prompts.</li>
+	<li>Navigate to "backend" folder and run ~<code>nodemon start</code> to start the backend.</li>
+	<li>Navigate to "frontend" folder and run ~<code>npm start</code> to start the front end.</li>
+	<li>Your browser will open up to your localhost and you will be brought to the homepage.</li>
+</ul>
+
 <h3>Search for movies using the Search by Name, Search by Release Year or Genre queries. </h3>
 <img src="screenshots/1-HomePage.png" alt="Home Page" width="200%" height="200%">
 
